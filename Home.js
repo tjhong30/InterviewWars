@@ -52,9 +52,15 @@ getQuestion() {
 render() {
   let feedItems = [];
 
-    for (let i = 0; i < this.state.questions.length; i ++) {
-      feedItems.push(<QuestionItem key={i} questions={this.state.questions[i]}/>)
+
+    for( let key in this.state.questions){
+      if(key === question){
+        feedItems.push(<QuestionItem questions={this.state.questions[key]}/>)
+      }
     }
+    // for (let i = 0; i < this.state.questions.length; i ++) {
+    //   feedItems.push(<QuestionItem key={i} questions={this.state.questions[i]}/>)
+    // }
 
 
 
