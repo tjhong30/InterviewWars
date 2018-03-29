@@ -10,6 +10,24 @@ class Home extends Component {
     };
 // binding here
 }
+getUrls() {
+ $.ajax({
+   type: "GET",
+   url: 'localhost:3000',
+   success: function(resp) {
+     console.log('grabbed urls')
+     console.log(resp);
+     x.updateUrls(resp);
+   },
+   error: function() {
+     console.log("error");
+   }
+ });
+}
+
+
+
+
 render() {
     return (
         <div>
